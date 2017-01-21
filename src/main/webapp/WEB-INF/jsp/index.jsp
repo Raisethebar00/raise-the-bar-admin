@@ -37,7 +37,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Ba<span class="logo-dec">ker</span></a>
+              <a class="navbar-brand" href="#">Raise The <span class="logo-dec">Bar</span></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav navbar-right">
@@ -48,6 +48,7 @@
                 <li class=""><a href="#testimonial">Testimonial</a></li>
                 <li class=""><a href="#blog">Blog</a></li>
                 <li class=""><a href="#contact">Contact Us</a></li>
+                <li class=""><a href="#contact">Login</a></li>
               </ul>
             </div>
           </div>
@@ -58,10 +59,9 @@
           <div class="row">
             <div class="banner-info text-center wow fadeIn delay-05s">
               <h1 class="bnr-title"> BUSINESS PORTAL </h1>
-              <h2 class="bnr-sub-title"> Raise The Bar </h2>
-              <p class="bnr-para"> Something about Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <br>ex ea commodo consequat.</p>
+              <h2 class="bnr-sub-title"> Raise The <span class="logo-dec">Bar</span> </h2>
+              <p class="bnr-para"> The first real-time marketing platform tailored to bars and taverns alike. </p>
               <div class="brn-btn">
-                <a href="#" class="btn btn-download">Download now!</a>
                 <a href="#" class="btn btn-more"> View Our Work</a>
               </div>
               <div class="overlay-detail">

@@ -172,13 +172,14 @@ h1.bnr-title
 {
     font-size: 18px;
     text-transform: uppercase;
+    padding: 240px 5px 15px 20px;
     letter-spacing: 2px;
 }
 h2.bnr-sub-title
 {
     font-size: 45px;
     text-transform: uppercase;
-    padding: 120px 0px;
+    padding: 00px 00px;
     font-weight: 700;
 }
 .bnr-para
