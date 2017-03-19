@@ -391,9 +391,9 @@
                         </div>
 
 
- <!--             <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>A99 Adam Street<br>Texas, TX 555072</p>
+                      <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>A99 Adam Street<br>Texas, TX 555072</p>
               <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@baker.com</p>
-              <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+41 5787 2323</p> -->
+              <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+41 5787 2323</p>
             </div>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
@@ -402,7 +402,7 @@
                 <p class="sub-title pad-bt15"> ENTER YOUR EMAIL ID AND PASSWORD BELOW TO LOGIN </p>
                 <div id="sendmessage">Your message has been sent. Thank you!</div>
                 <div id="errormessage"></div>
-                <form action="" method="post" role="form" class="contactForm">
+                <form action="/home" method="post" role="form" class="contactForm">
                     <div class="col-md-6 padding-right-zero">
                         <div class="form-group">
                             <input type="text" name="emailId" class="form-control" id="emailId" placeholder="Your Email" data-rule="minlen:4" data-msg="" />

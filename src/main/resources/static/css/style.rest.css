@@ -89,15 +89,8 @@ HEADER
 ************************************
 ***********************************/
 .header{
-background: url('../img/home.jpg') no-repeat fixed;
     background-size: 100% 100%;
-    min-height: 800px;
-    position: relative;
-}
-
-.header-home{
     background-color: Black;
-    background-size: 100% 100%;
     min-height: 85px;
     position: relative;
 }
@@ -194,7 +187,7 @@ h2.bnr-sub-title
 {
     font-weight: 300;
 }
-.btn-download, .btn-more, .btn-download:hover, .btn-download:focus, .btn-more:focus
+.btn-download, .btn-download:hover, .btn-download:focus
 {
     text-transform: uppercase;
     margin-top: 50px;
@@ -212,6 +205,46 @@ h2.bnr-sub-title
     transition: all 0.3s;
 }
 
+.btn-more, .btn-more:focus
+{
+    text-transform: uppercase;
+     margin-top: 50px;
+     color: #fff;
+     border: 0;
+     font-size: 14px;
+     font-weight: 300;
+     line-height: 24px;
+     padding: 10px 30px;
+     border-radius: 60px;
+     margin: 0px 10px 0 0;
+     outline: none !important;
+     -webkit-backface-visibility: hidden;
+     backface-visibility: hidden;
+     transition: all 0.3s;
+     position: absolute;
+     right: 0px;
+ }
+
+ .btn-more-free, .btn-more-free:focus
+ {
+     text-transform: uppercase;
+      margin-top: 50px;
+      color: #fff;
+      border: 0;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 24px;
+      padding: 10px 30px;
+      border-radius: 60px;
+      margin: 0px 10px 0 0;
+      outline: none !important;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transition: all 0.3s;
+      position: absolute;
+  }
+
+
 
 .btn-download
 {
@@ -223,8 +256,18 @@ h2.bnr-sub-title
     border: 1px solid #be9e21;
     color: #be9e21;
 }
+.btn-more-free, .btn-more-free:focus
+{
+    margin-left: 15px;
+    border: 1px solid #be9e21;
+    color: #be9e21;
+}
 
 .btn-more:hover {
+    background: #be9e21;
+    color: #fff;
+}
+.btn-more-free:hover {
     background: #be9e21;
     color: #fff;
 }
@@ -246,6 +289,8 @@ features
     font-family: 'Fira Sans', sans-serif;
     font-size: 35px;
     text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-left: 25%;
 }
 .item-img
 {
@@ -725,6 +770,11 @@ Responsive media queries
     margin-bottom: 15px;
 }
 }
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 @media (min-width: 20px) and (max-width: 450px) {
 .navbar-default .navbar-brand {
     padding-left: 16px;
@@ -743,6 +793,11 @@ body{
     font-size: 14px;
 }
 .btn-download, .btn-more, .btn-download:hover, .btn-more:hover, .btn-download:focus, .btn-more:focus {
+    font-size: 12px;
+    padding: 7px 18px;
+}
+
+.btn-more-free, .btn-more-free:hover, .btn-more-free:focus {
     font-size: 12px;
     padding: 7px 18px;
 }
@@ -784,3 +839,66 @@ body{
     text-align: center;
 }
 }
+
+.navbar-fixed-left {
+  width: 120px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 120px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
+
+.week-day-list-padding {
+
+    margin: 0% 0% 0% 0%;
+}
+
+ul.mytab {
+    list-style-type: none;
+    margin: 0p;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: black;
+}
+
+/* Float the list items side by side */
+ul.mytab li {float: left;}
+
+/* Style the links inside the list items */
+ul.mytab li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.mytab li a:hover {
+    color: #be9e21;
+}
+
+/* Create an active/current tablink class */
+ul.mytab li a:focus, .active {
+    color: #be9e21;
+}
+
+
+
