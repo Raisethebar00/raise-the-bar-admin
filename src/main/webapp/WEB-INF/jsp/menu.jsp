@@ -31,12 +31,6 @@
     <section id="service" class="section-padding wow fadeInUp delay-05s">
         <div class="container">
              <div class="row">
-                  <div class="col-md-12 text-center">
-                       <h2 class="service-title pad-bt15">What We Do?</h2>
-                       <p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                       <br>tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <hr class="bottom-line">
-                  </div>
                    <c:forEach items="${itemDetails}" var="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
                              <div class="service-item">

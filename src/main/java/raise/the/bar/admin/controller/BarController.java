@@ -85,6 +85,7 @@ public class BarController {
         barModel.setAmCloseTime(barModel.getPmCloseTime());
         barModel.setPmOpenTime(barModel.getPmCloseTime());
 
+
         BarModel savedBarModel = barService.saveOne(barModel);
         String bucketName = APPLICATION_NAME + savedBarModel.getBarId().toString();
         amazonAWSS3Operation.createNewBucket(bucketName);
@@ -93,6 +94,7 @@ public class BarController {
                 amazonAWSS3Operation.uploadFilesToS3(picture,bucketName));
 
         List<BarModel> barModelList = barService.findBarByOwnerId(ownerModel.getOwnerId());
+
         for (BarModel barModel1 : barModelList) {
             System.out.println(" after new bar added ");
             System.out.println(barModel1.getName()+" "+barModel1.getBarPicture());
@@ -153,13 +155,13 @@ public class BarController {
         System.out.println(" itemModel "+itemModel.getName());
         itemService.edit(itemModel);
 
-        return "redirect:/bar/"+5;
+        return "redirect:/home";
     }
 
     @RequestMapping(value ="/bar/special/edit",method = RequestMethod.POST)
     public String editBarSpecial(SpecialModel specialModel, ModelMap modelMap){
 
         specialService.editOne(specialModel);
-        return "redirect:/bar/"+5;
+        return "redirect:/home";
     }
 }

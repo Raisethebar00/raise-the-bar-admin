@@ -42,11 +42,9 @@ public class LoginController {
     public String login(LoginModel loginModel, ModelMap modelMap){
 
         OwnerModel ownerModel = ownerService.findOneOwner(loginModel);
-        System.out.println(ownerModel.getOwnerId()+" - "+ownerModel.getEmailId());
         List<BarModel> barModelList = barService.findBarByOwnerId(ownerModel.getOwnerId());
-        System.out.println(barModelList.get(0).getOwnerId()+" -- "+barModelList.get(0).getBarId());
-        modelMap.addAttribute("ownerDetail", ownerModel);
-        modelMap.addAttribute("barDetail", barModelList);
+        modelMap.put("ownerDetail", ownerModel);
+        modelMap.put("barDetail", barModelList);
 
         if(ownerModel == null){
             // ToDo Error handling
@@ -59,6 +57,10 @@ public class LoginController {
     @RequestMapping(value ="/home",method = RequestMethod.GET)
     public String homePage(LoginModel loginModel, ModelMap modelMap){
 
+        OwnerModel ownerModel = (OwnerModel) modelMap.get("ownerDetail");
+        List<BarModel> barModelList = barService.findBarByOwnerId(ownerModel.getOwnerId());
+        modelMap.put("ownerDetail", ownerModel);
+        modelMap.put("barDetail", barModelList);
         return "home";
     }
 
