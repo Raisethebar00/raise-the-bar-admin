@@ -15,6 +15,7 @@ import raise.the.bar.admin.write.service.OwnerService;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static raise.the.bar.admin.helper.RTBConstant.*;
@@ -42,10 +43,13 @@ public class LoginController {
     public String login(LoginModel loginModel, ModelMap modelMap){
 
         OwnerModel ownerModel = ownerService.findOneOwner(loginModel);
-        List<BarModel> barModelList = barService.findBarByOwnerId(ownerModel.getOwnerId());
+        List<BarModel> barModelList = new ArrayList<BarModel>();
+        if(ownerModel != null) {
+             barModelList = barService.findBarByOwnerId(ownerModel.getOwnerId());
+
+        }
         modelMap.put("ownerDetail", ownerModel);
         modelMap.put("barDetail", barModelList);
-
         if(ownerModel == null){
             // ToDo Error handling
             System.out.println(" ERROR");
