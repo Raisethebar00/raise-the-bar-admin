@@ -38,12 +38,13 @@ function configEditMenu(name, price, quantity,itemId){
     document.getElementById('editMenuId').value = itemId;
 }
 
-function configEditSpecial(name, price, quantity,till,dayOfWeek,itemId){
+function configEditSpecial(name, price, quantity,till,validFrom,dayOfWeek,itemId){
 
     document.getElementById('editSpecialName').value = name;
     document.getElementById('editSpecialPrice').value = price;
     document.getElementById('editSpecialQuantity').value = quantity;
     document.getElementById('editSpecialTillTime').value = till;
+    document.getElementById('editSpecialValidFrom').value = validFrom;
     document.getElementById('editSpecialDayOfWeek').value = dayOfWeek;
     document.getElementById('editSpecialId').value = itemId;
 }

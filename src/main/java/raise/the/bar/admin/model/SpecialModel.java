@@ -18,12 +18,22 @@ public class SpecialModel {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "specialSeq")
     @SequenceGenerator(name = "specialSeq", sequenceName = "special_special_id_seq", allocationSize = 1)
     private @Column(name="special_id") Integer itemId;
+
     private @Column(name="bar_id") Integer barId;
     private @Column(name="name") String name;
     private @Column(name="price") BigDecimal price;
     private @Column(name="quantity") String quantity;
     private @Column(name="day_of_week") Integer dayOfWeek;
     private @Column(name="till") Time tillTime;
+    private @Column(name="valid_from") Time validFrom;
+
+    public Time getValidFrom() {
+        return validFrom;
+    }
+
+    public void setValidFrom(Time validFrom) {
+        this.validFrom = validFrom;
+    }
 
     public Time getTillTime() {
         return tillTime;

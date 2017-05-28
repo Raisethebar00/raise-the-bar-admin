@@ -50,12 +50,13 @@
                                                                    <h3> ${item.name}</h3>
                                                                     <p><b>Price  :: </b> ${item.price} USD
                                                                         <br><b>Quantity :: </b> ${item.quantity}
-                                                                        <br><b>Valid Till ::</b> ${item.quantity}
+                                                                        <br><b>Valid From ::</b> ${item.validFrom}
+                                                                        <br><b>Valid Till ::</b> ${item.tillTime}
                                                                     </p>
                                                                     <a href="#" class="btn btn-more-free" data-toggle="modal"
                                                                         data-target="#editSpecialModal"
                                                                         onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
-                                                                        '${item.tillTime}','${item.dayOfWeek}','${item.itemId}');" >
+                                                                        '${item.tillTime}','${item.validFrom}','${item.dayOfWeek}','${item.itemId}');" >
                                                                         Edit This Item
                                                                     </a>
                                                                 </div>
@@ -75,14 +76,15 @@
                                                                    <h3> ${item.name}</h3>
                                                                     <p><b>Price  :: </b> ${item.price} USD
                                                                         <br><b>Quantity :: </b> ${item.quantity}
-                                                                        <br><b>Valid Till ::</b> ${item.quantity}
+                                                                        <br><b>Valid From ::</b> ${item.validFrom}
+                                                                        <br><b>Valid Till ::</b> ${item.tillTime}
                                                                     </p>
                                                                     <a href="#" class="btn btn-more-free" data-toggle="modal"
-                                                                     data-target="#editSpecialModal"
-                                                                     onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
-                                                                     '${item.tillTime}','${item.dayOfWeek}','${item.itemId}');" >
-                                                                     Edit This Item
-                                                                     </a>
+                                                                        data-target="#editSpecialModal"
+                                                                        onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
+                                                                        '${item.tillTime}','${item.validFrom}','${item.dayOfWeek}','${item.itemId}');" >
+                                                                        Edit This Item
+                                                                    </a>
                                                                 </div>
                                                         </div>
                                                     </c:if>
@@ -97,14 +99,15 @@
                                                                    <h3> ${item.name}</h3>
                                                                     <p><b>Price  :: </b> ${item.price} USD
                                                                         <br><b>Quantity :: </b> ${item.quantity}
-                                                                        <br><b>Valid Till ::</b> ${item.quantity}
+                                                                        <br><b>Valid From ::</b> ${item.validFrom}
+                                                                        <br><b>Valid Till ::</b> ${item.tillTime}
                                                                     </p>
                                                                     <a href="#" class="btn btn-more-free" data-toggle="modal"
-                                                                     data-target="#editSpecialModal"
-                                                                     onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
-                                                                     '${item.tillTime}','${item.dayOfWeek}','${item.itemId}');" >
-                                                                     Edit This Item
-                                                                     </a>
+                                                                        data-target="#editSpecialModal"
+                                                                        onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
+                                                                        '${item.tillTime}','${item.validFrom}','${item.dayOfWeek}','${item.itemId}');" >
+                                                                        Edit This Item
+                                                                    </a>
                                                                 </div>
                                                         </div>
                                                     </c:if>
@@ -119,14 +122,15 @@
                                                                    <h3> ${item.name}</h3>
                                                                     <p><b>Price  :: </b> ${item.price} USD
                                                                         <br><b>Quantity :: </b> ${item.quantity}
-                                                                        <br><b>Valid Till ::</b> ${item.quantity}
+                                                                        <br><b>Valid From ::</b> ${item.validFrom}
+                                                                        <br><b>Valid Till ::</b> ${item.tillTime}
                                                                     </p>
                                                                     <a href="#" class="btn btn-more-free" data-toggle="modal"
-                                                                     data-target="#editSpecialModal"
-                                                                     onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
-                                                                     '${item.tillTime}','${item.dayOfWeek}','${item.itemId}');" >
-                                                                     Edit This Item
-                                                                     </a>
+                                                                        data-target="#editSpecialModal"
+                                                                        onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
+                                                                        '${item.tillTime}','${item.validFrom}','${item.dayOfWeek}','${item.itemId}');" >
+                                                                        Edit This Item
+                                                                    </a>
                                                                 </div>
                                                         </div>
                                                     </c:if>
@@ -141,14 +145,15 @@
                                                                    <h3> ${item.name}</h3>
                                                                     <p><b>Price  :: </b> ${item.price} USD
                                                                         <br><b>Quantity :: </b> ${item.quantity}
-                                                                        <br><b>Valid Till ::</b> ${item.quantity}
+                                                                        <br><b>Valid From ::</b> ${item.validFrom}
+                                                                        <br><b>Valid Till ::</b> ${item.tillTime}
                                                                     </p>
                                                                     <a href="#" class="btn btn-more-free" data-toggle="modal"
-                                                                     data-target="#editSpecialModal"
-                                                                     onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
-                                                                     '${item.tillTime}','${item.dayOfWeek}','${item.itemId}');" >
-                                                                     Edit This Item
-                                                                     </a>
+                                                                        data-target="#editSpecialModal"
+                                                                        onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
+                                                                        '${item.tillTime}','${item.validFrom}','${item.dayOfWeek}','${item.itemId}');" >
+                                                                        Edit This Item
+                                                                    </a>
                                                                 </div>
                                                         </div>
                                                     </c:if>
@@ -163,14 +168,15 @@
                                                                    <h3> ${item.name}</h3>
                                                                     <p><b>Price  :: </b> ${item.price} USD
                                                                         <br><b>Quantity :: </b> ${item.quantity}
-                                                                        <br><b>Valid Till ::</b> ${item.quantity}
+                                                                        <br><b>Valid From ::</b> ${item.validFrom}
+                                                                        <br><b>Valid Till ::</b> ${item.tillTime}
                                                                     </p>
                                                                     <a href="#" class="btn btn-more-free" data-toggle="modal"
-                                                                     data-target="#editSpecialModal"
-                                                                     onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
-                                                                     '${item.tillTime}','${item.dayOfWeek}','${item.itemId}');" >
-                                                                     Edit This Item
-                                                                     </a>
+                                                                        data-target="#editSpecialModal"
+                                                                        onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
+                                                                        '${item.tillTime}','${item.validFrom}','${item.dayOfWeek}','${item.itemId}');" >
+                                                                        Edit This Item
+                                                                    </a>
                                                                 </div>
                                                         </div>
                                                     </c:if>
@@ -185,14 +191,15 @@
                                                                    <h3> ${item.name}</h3>
                                                                     <p><b>Price  :: </b> ${item.price} USD
                                                                         <br><b>Quantity :: </b> ${item.quantity}
-                                                                        <br><b>Valid Till ::</b> ${item.quantity}
+                                                                        <br><b>Valid From ::</b> ${item.validFrom}
+                                                                        <br><b>Valid Till ::</b> ${item.tillTime}
                                                                     </p>
                                                                     <a href="#" class="btn btn-more-free" data-toggle="modal"
-                                                                     data-target="#editSpecialModal"
-                                                                     onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
-                                                                     '${item.tillTime}','${item.dayOfWeek}','${item.itemId}');" >
-                                                                     Edit This Item
-                                                                     </a>
+                                                                        data-target="#editSpecialModal"
+                                                                        onClick="configEditSpecial('${item.name}','${item.price}','${item.quantity}',
+                                                                        '${item.tillTime}','${item.validFrom}','${item.dayOfWeek}','${item.itemId}');" >
+                                                                        Edit This Item
+                                                                    </a>
                                                                 </div>
                                                         </div>
                                                     </c:if>

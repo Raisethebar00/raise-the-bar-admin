@@ -51,6 +51,12 @@
                                                                             </div>
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
+                                                                                    <input type="text" class="form-control" name="validFrom" id="validFrom" placeholder="validFrom 17:00:00" data-rule="minlen:4" data-msg="Invalid Latitude" />
+                                                                                    <div class="validation"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
                                                                                     <input type="text" class="form-control" name="dayOfWeek" id="dayOfWeek" placeholder="dayOfWeek" data-rule="minlen:4" data-msg="Invalid Latitude" />
                                                                                     <div class="validation"></div>
                                                                                 </div>

@@ -25,8 +25,8 @@ public interface SpecialRepository extends JpaRepository<SpecialModel,Integer>{
     @Modifying
     @Transactional
     @Query("update SpecialModel b set b.name = :name , b.price = :price , b.quantity = :quantity , b.tillTime = :tillTime ," +
-            "b.dayOfWeek = :dayOfWeek where b.itemId = :itemId")
-    int editOne(@Param("name") String name, @Param("price") BigDecimal price, @Param("quantity") String quantity,
+            "b.validFrom = :validFrom , b.dayOfWeek = :dayOfWeek where b.itemId = :itemId")
+    int editOne(@Param("name") String name, @Param("price") BigDecimal price, @Param("quantity") String quantity,@Param("validFrom") Time validFrom,
                 @Param("tillTime") Time tillTime, @Param("dayOfWeek") Integer dayOfWeek, @Param("itemId") Integer itemId);
 
 }

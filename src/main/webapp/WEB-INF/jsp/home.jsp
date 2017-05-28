@@ -163,6 +163,14 @@
                                                                     <div class="validation"></div>
                                                                 </div>
                                                             </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control" name="description" id="description" placeholder="Bar Description" data-rule="description" data-msg="Invalid Description" />
+                                                                    <div class="validation"></div>
+                                                                </div>
+                                                            </div>
+
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Bar Latitude" data-rule="minlen:4" data-msg="Invalid Latitude" />

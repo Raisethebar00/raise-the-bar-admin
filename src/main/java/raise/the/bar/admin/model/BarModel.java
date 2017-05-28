@@ -22,6 +22,7 @@ public class BarModel {
     @SequenceGenerator(name = "barSeq", sequenceName = "bar_bar_id_seq", allocationSize = 1)
     private @Column(name="bar_id") Integer barId;
     private @Column(name="owner_id") Integer ownerId;
+    private @Column(name="description") String description;
     private @Column(name="day_of_week") Integer dayOFWeek;
     private @Column(name="name") String name;
     private @Column(name="address") String address;
@@ -34,6 +35,16 @@ public class BarModel {
     private @Column(name="pm_open_time") Time pmOpenTime;
     private @Column(name="pm_close_time") Time pmCloseTime;
     private @Column(name="logo") String barLogo;
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
     public Integer getBarId() {
         return barId;

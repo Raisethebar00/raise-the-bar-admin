@@ -142,7 +142,6 @@ public class BarController {
     @RequestMapping(value ="/editBarTiming/{barId:.+}",method = RequestMethod.POST)
     public String editBarTiming(@PathVariable("barId") Integer barId, @ModelAttribute("barWeekTimingDetails") BarTimingForWeek barTimingForWeek1, ModelMap modelMap){
 
-        System.out.println(barTimingForWeek1.getWeekTiming().size()+" -------");
 
         barTimingService.reinsertAll(barTimingOperationWithNewEntry.generateEmptyList(barTimingForWeek1).getWeekTiming(),barId);
 
@@ -152,7 +151,6 @@ public class BarController {
     @RequestMapping(value ="/bar/item/edit",method = RequestMethod.POST)
     public String editBarItem(ItemModel itemModel, ModelMap modelMap){
 
-        System.out.println(" itemModel "+itemModel.getName());
         itemService.edit(itemModel);
 
         return "redirect:/home";

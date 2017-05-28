@@ -36,11 +36,11 @@ public class SpecialServiceImpl implements SpecialService {
         System.out.println(" Going to Edit - Name "+specialModel.getName());
         System.out.println(" Going to Edit - Item Id "+specialModel.getItemId());
         System.out.println(" Going to Edit - DayOF week"+specialModel.getDayOfWeek());
-        System.out.println(" Going to Edit - Bar Name"+specialModel.getBarId());
+        System.out.println(" Going to Edit - Bar Name"+specialModel.getName());
 
 
-        return specialRepository.editOne(specialModel.getName(),specialModel.getPrice(),specialModel.getQuantity(),
-                                          specialModel.getTillTime(), specialModel.getDayOfWeek(), specialModel.getItemId());
+        return specialRepository.editOne(specialModel.getName(),specialModel.getPrice(),specialModel.getQuantity(),specialModel.getValidFrom(),
+                                          specialModel.getTillTime(),specialModel.getDayOfWeek(), specialModel.getItemId());
     }
 
 }

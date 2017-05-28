@@ -51,6 +51,13 @@
                                                                                     <div class="validation"></div>
                                                                                 </div>
                                                                             </div>
+
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" class="form-control" name="description" id="description" value="${singleBarDetails.description}" data-rule="description" data-msg="Invalid description" />
+                                                                                    <div class="validation"></div>
+                                                                                </div>
+                                                                            </div>
                                                                             <div class="col-md-6">
                                                                                 <div class="form-group">
                                                                                     <input type="text" class="form-control" name="latitude" id="latitude" value="${singleBarDetails.latitude}" data-rule="minlen:4" data-msg="Invalid Latitude" />
