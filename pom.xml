@@ -6,7 +6,7 @@
 	<groupId>com.raise.the.bar.admin</groupId>
 	<artifactId>raise.the.bar.admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>raise.the.bar.admin</name>
 	<description>raise-the-bar-admin</description>
@@ -115,7 +115,7 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk</artifactId>
-			<version>1.9.2</version>
+			<version>1.11.144</version>
 		</dependency>
 
 	</dependencies>
