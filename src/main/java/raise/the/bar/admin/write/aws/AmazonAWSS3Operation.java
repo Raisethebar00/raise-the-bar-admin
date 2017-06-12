@@ -2,8 +2,10 @@ package raise.the.bar.admin.write.aws;
 
 import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -25,30 +27,10 @@ import static raise.the.bar.admin.helper.RTBConstant.CONTENT_TYPE_IMAGE_JPEG;
 public class AmazonAWSS3Operation {
 
 
-    public String uploadFilesToS3(MultipartFile file, String bucketName) throws IOException {
-
-      //  AmazonS3 amazonS3Client = new AmazonS3Client(new ProfileCredentialsProvider());
-        AmazonS3 amazonS3Client = new AmazonS3Client();
-        InputStream inputStream = file.getInputStream();
-        ObjectMetadata objectMetadata = new ObjectMetadata();
-
-        objectMetadata.setContentType(CONTENT_TYPE_IMAGE_JPEG);
-        String pictureName = UUID.randomUUID().toString().toLowerCase();
-
-        amazonS3Client.putObject(new PutObjectRequest(bucketName,pictureName, inputStream,new ObjectMetadata())
-                .withCannedAcl(CannedAccessControlList.PublicRead).withMetadata(objectMetadata));
-
-        return amazonS3Client.getObject(bucketName,pictureName).getObjectContent()
-                            .getHttpRequest().getURI().toString();
-    }
-
 //    public String uploadFilesToS3(MultipartFile file, String bucketName) throws IOException {
 //
+//      //  AmazonS3 amazonS3Client = new AmazonS3Client(new ProfileCredentialsProvider());
 //        AmazonS3 amazonS3Client = new AmazonS3Client();
-//        AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
-//                .withCredentials(new EnvironmentVariableCredentialsProvider())
-//                .build();
-//
 //        InputStream inputStream = file.getInputStream();
 //        ObjectMetadata objectMetadata = new ObjectMetadata();
 //
@@ -59,8 +41,29 @@ public class AmazonAWSS3Operation {
 //                .withCannedAcl(CannedAccessControlList.PublicRead).withMetadata(objectMetadata));
 //
 //        return amazonS3Client.getObject(bucketName,pictureName).getObjectContent()
-//                .getHttpRequest().getURI().toString();
+//                            .getHttpRequest().getURI().toString();
 //    }
+
+    public String uploadFilesToS3(MultipartFile file, String bucketName) throws IOException {
+
+       // AmazonS3 amazonS3Client = new AmazonS3Client();
+        AmazonS3 amazonS3Client = AmazonS3ClientBuilder.standard()
+                .withCredentials(new EnvironmentVariableCredentialsProvider())
+                .withRegion(Regions.DEFAULT_REGION)
+                .build();
+
+        InputStream inputStream = file.getInputStream();
+        ObjectMetadata objectMetadata = new ObjectMetadata();
+
+        objectMetadata.setContentType(CONTENT_TYPE_IMAGE_JPEG);
+        String pictureName = UUID.randomUUID().toString().toLowerCase();
+
+        amazonS3Client.putObject(new PutObjectRequest(bucketName,pictureName, inputStream,new ObjectMetadata())
+                .withCannedAcl(CannedAccessControlList.PublicRead).withMetadata(objectMetadata));
+
+        return amazonS3Client.getObject(bucketName,pictureName).getObjectContent()
+                .getHttpRequest().getURI().toString();
+    }
 //    public void createNewBucket(String bucketName){
 //
 //     //   AmazonS3 amazonS3Client = new AmazonS3Client(new ProfileCredentialsProvider());
@@ -70,7 +73,10 @@ public class AmazonAWSS3Operation {
 
     public void createNewBucket(String bucketName){
 
-        AmazonS3 amazonS3Client = new AmazonS3Client();
+        AmazonS3 amazonS3Client = AmazonS3ClientBuilder.standard()
+                .withCredentials(new EnvironmentVariableCredentialsProvider())
+                .withRegion(Regions.DEFAULT_REGION)
+                .build();
         amazonS3Client.createBucket(bucketName);
     }
 }

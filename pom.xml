@@ -6,7 +6,7 @@
 	<groupId>com.raise.the.bar.admin</groupId>
 	<artifactId>raise.the.bar.admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>raise.the.bar.admin</name>
 	<description>raise-the-bar-admin</description>
