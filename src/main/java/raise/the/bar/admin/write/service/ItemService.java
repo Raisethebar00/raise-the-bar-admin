@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface ItemService {
 
-    public boolean saveOne(ItemModel itemModel);
+    public ItemModel saveOne(ItemModel itemModel);
     public List<ItemModel> findAll(Integer barId);
     public int edit(ItemModel itemModel);
 }

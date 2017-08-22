@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface SpecialService {
 
-    public boolean saveOne(SpecialModel specialModel);
+    public SpecialModel saveOne(SpecialModel specialModel);
     public List<SpecialModel> findAll(Integer barId);
     public Integer editOne(SpecialModel specialModel);
 

@@ -1,5 +1,7 @@
 package raise.the.bar.admin.write.serviceImpl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import raise.the.bar.admin.model.SpecialModel;
@@ -15,30 +17,30 @@ import java.util.List;
 @Service
 public class SpecialServiceImpl implements SpecialService {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private SpecialRepository specialRepository;
 
     @Override
-    public boolean saveOne(SpecialModel specialModel) {
+    public SpecialModel saveOne(SpecialModel specialModel) {
 
-        specialRepository.save(specialModel);
-        return true;
+        logger.info("Adding a new special for a bar with bar ID as {} ",specialModel.getBarId());
+
+        return specialRepository.save(specialModel);
     }
 
     @Override
     public List<SpecialModel> findAll(Integer barId) {
+
+        logger.info("Searching for all services from a bar with barId {} ",barId);
         return specialRepository.findAllSpecialByBarId(barId);
     }
 
     @Override
     public Integer editOne(SpecialModel specialModel) {
 
-        System.out.println(" Going to Edit - Name "+specialModel.getName());
-        System.out.println(" Going to Edit - Item Id "+specialModel.getItemId());
-        System.out.println(" Going to Edit - DayOF week"+specialModel.getDayOfWeek());
-        System.out.println(" Going to Edit - Bar Name"+specialModel.getName());
-
-
+        logger.info(" Updating Special Item information with Item ID as {}",specialModel.getItemId());
         return specialRepository.editOne(specialModel.getName(),specialModel.getPrice(),specialModel.getQuantity(),specialModel.getValidFrom(),
                                           specialModel.getTillTime(),specialModel.getDayOfWeek(), specialModel.getItemId());
     }

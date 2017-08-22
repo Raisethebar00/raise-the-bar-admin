@@ -1,5 +1,7 @@
 package raise.the.bar.admin.write.serviceImpl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
@@ -17,11 +19,15 @@ import java.util.List;
 @Service
 public class BarTimingServiceImpl implements BarTimingService {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private BarTimingRepository barTimingRepository;
 
     @Override
     public List<BarTimingModel> findAllByBarId(Integer barId) {
+
+        //ToDo to log the activity
         return barTimingRepository.findAllByBarId(barId);
     }
 
@@ -30,6 +36,7 @@ public class BarTimingServiceImpl implements BarTimingService {
     @Override
     public List<BarTimingModel> reinsertAll(List<BarTimingModel> barTimingModelList , Integer barId) {
 
+        logger.info("Re-Inserting BarTiming for BarID {} ",barId);
         barTimingRepository.deleteAllByBarId(barId);
         return barTimingRepository.save(barTimingModelList);
     }

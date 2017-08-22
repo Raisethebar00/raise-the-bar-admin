@@ -10,6 +10,8 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,6 +28,7 @@ import static raise.the.bar.admin.helper.RTBConstant.CONTENT_TYPE_IMAGE_JPEG;
 @Service
 public class AmazonAWSS3Operation {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 //    public String uploadFilesToS3(MultipartFile file, String bucketName) throws IOException {
 //
@@ -46,6 +49,8 @@ public class AmazonAWSS3Operation {
 
     public String uploadFilesToS3(MultipartFile file, String bucketName) throws IOException {
 
+        logger.info("Uploading a new file to bucket {} ",bucketName);
+
        // AmazonS3 amazonS3Client = new AmazonS3Client();
         AmazonS3 amazonS3Client = AmazonS3ClientBuilder.standard()
                 .withCredentials(new EnvironmentVariableCredentialsProvider())
@@ -61,8 +66,11 @@ public class AmazonAWSS3Operation {
         amazonS3Client.putObject(new PutObjectRequest(bucketName,pictureName, inputStream,new ObjectMetadata())
                 .withCannedAcl(CannedAccessControlList.PublicRead).withMetadata(objectMetadata));
 
-        return amazonS3Client.getObject(bucketName,pictureName).getObjectContent()
+        String linkToUploadedFile = amazonS3Client.getObject(bucketName,pictureName).getObjectContent()
                 .getHttpRequest().getURI().toString();
+        logger.info("Link to uploaded file {} ",linkToUploadedFile);
+
+        return linkToUploadedFile;
     }
 //    public void createNewBucket(String bucketName){
 //
@@ -73,6 +81,7 @@ public class AmazonAWSS3Operation {
 
     public void createNewBucket(String bucketName){
 
+        logger.info("Creating a new bucket with name as {} ",bucketName);
         AmazonS3 amazonS3Client = AmazonS3ClientBuilder.standard()
                 .withCredentials(new EnvironmentVariableCredentialsProvider())
                 .withRegion(Regions.DEFAULT_REGION)
